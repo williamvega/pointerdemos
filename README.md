@@ -1,4 +1,5 @@
 ## What is a pointer?
+* Sample code below found in pointerdemo1*
 
 A pointer is a datatype that "points" to a memory address.
 
@@ -27,3 +28,4 @@ The Contents of Operator(also called a dereferencing operator) is a called on a 
 ```
 
 *p is simply an alias for x.
+
