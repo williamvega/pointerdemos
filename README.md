@@ -1,5 +1,5 @@
 ## What is a pointer?
-* Sample code below found in pointerdemo1*
+ *Sample code below found in pointerdemo1*
 
 A pointer is a datatype that "points" to a memory address, such that it has that memory address as its value.
 
@@ -73,4 +73,26 @@ To make it very clear, we are NOT using a return statement to change the value o
 This is relevant to the discussion of pointers because of the interchangeability of pointers and built-in arrays, and the fast that built-in arrays are always passed by reference, thus leaving them mutatable in the called function.
 
 There are four ways to pass a pointer to a function: a nonconstant pointer to nonconstant data, a nonconstant pointer to constant data, a constant pointer to nonconstant data, and a constant pointer to constant data.
+
+ *Method 1: Nonconstant pointer to nonconstant data*
+Highest access to data possible. Data may be modified through dereferenced pointer, pointer may be modified to point to other data.
+
+*Method 2: Nonconstant pointer to constant data*
+Pointer may be modified to point to other data, but the data cannot be modified through the pointer.
+
+`const int* countPtr` and `int const* countPtr` are both refering to a countPtr being a pointer refering to an integer constant`, while the pointer itself is not constant. The data (an integer) is constant, the pointer is not.
+
+*Method 3: Constant pointer to nonconstant data*
+A constant pointer to nonconstant data always points to the same memory location, but may be modified through the pointer.
+Pointers declared const must be initialized when declared, and if it is a function parameter, it is initialized when the pointer is passed to the function.
+```cpp
+int* const ptr = &x;
+```
+
+*Method 4: Constant pointer to constant data*
+Minmum possible privelege given.
+A pointer that always points to the same memory address, AND the value can not be modified through the pointer.
+```cpp
+const int* const ptr = &x;
+```
 
