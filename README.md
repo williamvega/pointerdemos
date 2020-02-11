@@ -1,3 +1,5 @@
+# Pointer specific topics
+
 ## What is a pointer?
  *Sample code below found in pointerdemo1*
 
@@ -96,3 +98,37 @@ A pointer that always points to the same memory address, AND the value can not b
 const int* const ptr = &x;
 ```
 
+## Pointer Expressions and Pointer Arithmetic
+Some arithmetic operations may be performed on pointers.
+Pointer arithmetic is only appropriate for pointers that point to built-in arrays. The operations include `++`, `--`, `+=`, `+`, `-=`, `-`, and subratracting one pointer from another of the same type (when tjey point to the elements of the same built in array).
+
+**Adding**
+The addition will not only be the integer, but the integer times to sizeof the datatype the pointer refers to. For example, if `vPntr` points to memory address 1000, and each item in the array is 8 bytes, then `vPntr+=1` will point to 1008.
+There is no bounds checking.
+
+Subtracting works the same way.
+
+**Subtracting Pointers**
+Pointer variables pointing to the same built-in array can be subtracted from eachother. If `vPtr1` points to 3000 and `vPtr2` points to 3008, then
+```cpp
+x = vPtr2 - vPtr1; // x would be the number of built in array elements between the two pointers
+```
+
+**Pointer assignment**
+Pointers may be assigned to other pointers if both pointers are of the same time. The only expection is a pointer to `void`, such as `void*`. This generic pointer can represent any pointer type.
+
+A void* pointer cannot be dereferrenced, as it contains memory address for an unknown datatype, and cannot know which datattype this should be.
+
+**Comparing pointers**
+Most often we just make sure it doesn't point to null.
+
+# Pointer Related Topics
+## Built-in Arrays
+
+## Relationship between built-in arrays and pointers
+
+## `sizeof` Operator
+
+## Pointer-based strings
+
+## Smart Pointers notes
